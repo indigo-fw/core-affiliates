@@ -14,6 +14,6 @@ Referral tracking, marketing attribution, and affiliate management.
 1. Create `config/deps/affiliates-deps.ts` → import in `server.ts`
 2. Routers auto-registered via `indigo:sync`
 3. Use `AttributionCapture` in public layout
-4. Call `captureAttribution()` from auth, `recordConversion()` from payment webhooks
+4. Call `captureAttribution()` from auth, `recordConversion()` / `recordRefund()` from payment webhooks (or emit the `payment.conversion` / `payment.refund` hooks with the same `referenceId`)
 
 **Cross-module:** optional dep on core-payments (via injected table ref).
